@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Exif Data
+    
+  body
+    h1 Exif Data
+
+    - if dir
+      #content
+        p searched in directory = #{dir}
+
+    - if rows.any?
+      table#images
+        - for row in rows
+          tr
+            td.file = row[0]
+            td.long = row[1]
+            td.lat = row[2]
+    - else
+      p No images with valid data found
